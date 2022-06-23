@@ -1,0 +1,20 @@
+{
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        "@babel/plugin-syntax-dynamic-import",
+        "syntax-dynamic-import",
+        [
+            "import-redirect",
+            {
+                "root": "./mock",
+                "redirect": {
+                    "aboutUs": "./aboutUs.mock.jsx",
+                    "(\\w+)\\.jsx$": "./components/$1.jsx"
+                }
+            }
+        ]
+    ]
+}
