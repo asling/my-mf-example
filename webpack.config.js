@@ -1,19 +1,37 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const fs = require('fs');
+
+const DIR = '.dep-temp';
 
 const deps = require("./package.json").dependencies;
+
+const DefaultOrNamespaceSpecifier = 'DefaultOrNamespaceSpecifier';
+
+const DESTINATION = path.resolve(process.cwd(), DIR, 'deps.json');
 
 const ModuleFederationPlugin =
   require("webpack").container.ModuleFederationPlugin;
 
 function getAntdMFShareDeps() {
   const version = deps['antd'] || '0.0.1';
-  return ['antd/es/card', 'antd/es/card/style', 'antd/es/modal'].map(item => {
-    return {
-      requiredVersion: version,
-      dep: item,
+  const results = [];
+  if (fs.existsSync(DESTINATION)) {
+    const fileData = fs.readFileSync(DESTINATION);
+    if (fileData) {
+      const resultMap = new Map(Object.entries(JSON.parse(fileData.toString())));
+      resultMap.forEach((item,key) => {
+        if (item === DefaultOrNamespaceSpecifier) {
+          results.push({
+            dep: key,
+            requiredVersion: version,
+          });
+        }
+      })
     }
-  });
+  }
+
+  return results;
 }
 
 function getShared(eager = false) {
@@ -28,6 +46,8 @@ function getShared(eager = false) {
       requiredVersion: s.requiredVersion,
     }
   });
+
+  console.log('ss', ss);
 
   const includeDeps = [
     "react",
@@ -78,9 +98,13 @@ module.exports = {
               { "libraryName": "antd", libraryDirectory: 'es'}
             ],
             [
-              require.resolve('./scripts/babel-plugins/babel-plugin-deps-search'),
+              require.resolve('./scripts/babel-plugins/babel-plugin-singleton-search'),
               {
-                deps: ['antd']
+                deps: [{
+                  name: 'antd',
+                  version: deps['antd'],
+                }],
+                output: path.resolve(process.cwd(), DIR),
               }
             ]
           ]
