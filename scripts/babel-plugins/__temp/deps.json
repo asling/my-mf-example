@@ -1,0 +1,12 @@
+{
+    "antd-Card": {
+        "dep": "antd",
+        "importedName": "Card"
+    },
+    "antd-Modal": {
+        "dep": "antd",
+        "importedName": "Modal"
+    },
+    "antd/es/card": "DefaultOrNamespaceSpecifier",
+    "antd/es/modal": "DefaultOrNamespaceSpecifier"
+}

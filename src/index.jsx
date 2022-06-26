@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom';
 import React, { Suspense } from 'react';
 import { Main } from './main.jsx';
+import {Card, Modal} from 'antd';
 const AboutUs = React.lazy(() =>
   import(/* webpackChunkName: "aboutUs" */ './aboutUs.jsx'));
 import { Contact } from './contact.jsx';
@@ -10,7 +11,10 @@ ReactDOM.render(
   <BrowserRouter>
     <div>
       <div className="logo">
-        <img src={logo} alt=""/>
+        <Card><img src={logo} alt=""/></Card>
+        <Modal>
+          123
+        </Modal>
       </div>
       <div className="links">
         <Link to="/">Main</Link> | <Link to="/aboutUs">About Us</Link> | <Link to="/contact">Contact</Link>
