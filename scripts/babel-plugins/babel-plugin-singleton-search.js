@@ -57,13 +57,12 @@ module.exports = function singletonSearch({ types }) {
 
   function prepareFile() {
     try {
+      if (!fs.existsSync(pluginOptions.dir)) fs.mkdirSync(pluginOptions.dir);
       if (fs.existsSync(pluginOptions.destination)) {
         const fileData = fs.readFileSync(pluginOptions.destination);
         if (fileData) {
           resultMap = new Map(Object.entries(JSON.parse(fileData.toString())));
         }
-      } else {
-        fs.mkdirSync(pluginOptions.dir);
       }
     } catch (error) {
       console.error("prepare error", error);
@@ -89,7 +88,7 @@ module.exports = function singletonSearch({ types }) {
                 matching(dep, path);
               });
             } else {
-              console.error("error1");
+              console.error("error1", '入参错误');
             }
           } catch (error) {
             console.error("error2", error);
