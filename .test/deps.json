@@ -1,0 +1,6 @@
+{
+    "antd": {
+        "type": "DefaultOrNamespaceSpecifier",
+        "version": "0.0.1"
+    }
+}

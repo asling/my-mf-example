@@ -56,42 +56,41 @@ module.exports = function singletonSearch({ types }) {
   }
 
   function prepareFile() {
-    try {
-      if (!fs.existsSync(pluginOptions.dir)) fs.mkdirSync(pluginOptions.dir);
-      if (fs.existsSync(pluginOptions.destination)) {
-        const fileData = fs.readFileSync(pluginOptions.destination);
-        if (fileData) {
-          resultMap = new Map(Object.entries(JSON.parse(fileData.toString())));
-        }
+    if (!fs.existsSync(pluginOptions.dir)) fs.mkdirSync(pluginOptions.dir);
+    if (fs.existsSync(pluginOptions.destination)) {
+      const fileData = fs.readFileSync(pluginOptions.destination);
+      if (fileData) {
+        resultMap = new Map(Object.entries(JSON.parse(fileData.toString())));
       }
-    } catch (error) {
-      console.error("prepare error", error);
     }
   }
 
   return {
+    name: "singleton search",
     visitor: {
       Program: {
         enter(_, { opts: { output } }) {
-          if (output) {
-            pluginOptions.dir = output;
-            pluginOptions.destination = path.resolve(output, "deps.json");
+          try {
+            if (output) {
+              pluginOptions.dir = output;
+              pluginOptions.destination = path.resolve(output, "deps.json");
+            }
+            prepareFile();
+          } catch (error) {
+            // console.log("prepare error", error);
+            throw new Error("prepare error");
           }
-          prepareFile();
         },
       },
       ImportDeclaration: {
         exit(path, { opts: { deps } }) {
-          try {
-            if (Array.isArray(deps)) {
-              deps.forEach((dep) => {
-                matching(dep, path);
-              });
-            } else {
-              console.error("error1", '入参错误');
-            }
-          } catch (error) {
-            console.error("error2", error);
+          if (Array.isArray(deps)) {
+            deps.forEach((dep) => {
+              matching(dep, path);
+            });
+          } else {
+            // console.log("options error", "入参错误");
+            throw new Error("options error");
           }
         },
       },
@@ -104,8 +103,9 @@ module.exports = function singletonSearch({ types }) {
           JSON.stringify(data, null, 4)
         );
       } catch (error) {
-        console.error("post error", error);
+        // console.log("post error", error);
+        throw new Error("post error");
       }
-    },
+    }
   };
 };

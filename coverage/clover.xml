@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1656337012032" clover="3.2.0">
+  <project timestamp="1656337012032" name="All files">
+    <metrics statements="43" coveredstatements="43" conditionals="22" coveredconditionals="18" methods="9" coveredmethods="9" elements="74" coveredelements="70" complexity="0" loc="43" ncloc="43" packages="1" files="1" classes="1"/>
+    <file name="babel-plugin-singleton-search.js" path="/Users/chenyuwen/learnings/labs/my-mf-example/scripts/babel-plugins/babel-plugin-singleton-search.js">
+      <metrics statements="43" coveredstatements="43" conditionals="22" coveredconditionals="18" methods="9" coveredmethods="9"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="13" count="8" type="stmt"/>
+      <line num="16" count="8" type="stmt"/>
+      <line num="22" count="6" type="stmt"/>
+      <line num="23" count="6" type="stmt"/>
+      <line num="24" count="6" type="stmt"/>
+      <line num="25" count="6" type="cond" truecount="1" falsecount="1"/>
+      <line num="26" count="6" type="stmt"/>
+      <line num="27" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="29" count="4" type="stmt"/>
+      <line num="30" count="4" type="cond" truecount="1" falsecount="1"/>
+      <line num="31" count="4" type="stmt"/>
+      <line num="38" count="2" type="cond" truecount="1" falsecount="1"/>
+      <line num="43" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="44" count="1" type="stmt"/>
+      <line num="55" count="4" type="stmt"/>
+      <line num="59" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="60" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="61" count="4" type="stmt"/>
+      <line num="62" count="4" type="cond" truecount="1" falsecount="1"/>
+      <line num="63" count="4" type="stmt"/>
+      <line num="68" count="8" type="stmt"/>
+      <line num="73" count="8" type="stmt"/>
+      <line num="74" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="75" count="7" type="stmt"/>
+      <line num="76" count="7" type="stmt"/>
+      <line num="78" count="8" type="stmt"/>
+      <line num="81" count="1" type="stmt"/>
+      <line num="87" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="88" count="6" type="stmt"/>
+      <line num="89" count="6" type="stmt"/>
+      <line num="93" count="1" type="stmt"/>
+      <line num="99" count="6" type="stmt"/>
+      <line num="100" count="6" type="stmt"/>
+      <line num="101" count="6" type="stmt"/>
+      <line num="107" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
