@@ -1,16 +1,15 @@
-const fs = require('fs');
-const path = require('path');
-const process = require('process');
+const fs = require("fs");
+const path = require("path");
+const process = require("process");
 
+const Specifier = "Specifier";
+const DefaultOrNamespaceSpecifier = "DefaultOrNamespaceSpecifier";
 
-const Specifier = 'Specifier';
-const DefaultOrNamespaceSpecifier = 'DefaultOrNamespaceSpecifier';
+const DIR = path.resolve(process.cwd(), ".dep-temp");
 
-const DIR = path.resolve(process.cwd(), '.dep-temp');
+const DESTINATION = path.resolve(DIR, "deps.json");
 
-const DESTINATION = path.resolve(DIR, 'deps.json');
-
-module.exports = function singletonSearch({types}) {
+module.exports = function singletonSearch({ types }) {
   let resultMap = new Map();
 
   // 插件入参
@@ -24,7 +23,7 @@ module.exports = function singletonSearch({types}) {
     const specifiers = path.node.specifiers;
     const depName = dep.name;
     if (value.startsWith(depName)) {
-      specifiers.map(spec => {
+      specifiers.map((spec) => {
         if (types.isImportSpecifier(spec)) {
           // e.g import { Card } from 'antd'
           const key = getKey(value, spec.imported.name);
@@ -36,7 +35,10 @@ module.exports = function singletonSearch({types}) {
               version: dep.version,
             });
           }
-        } else if (types.isImportDefaultSpecifier(spec) || types.isImportNamespaceSpecifier(spec)) {
+        } else if (
+          types.isImportDefaultSpecifier(spec) ||
+          types.isImportNamespaceSpecifier(spec)
+        ) {
           // e.g import antd from 'antd' OR import * as antd from 'antd'
           if (!resultMap.has(value)) {
             resultMap.set(value, {
@@ -71,14 +73,13 @@ module.exports = function singletonSearch({types}) {
   return {
     visitor: {
       Program: {
-        enter(_, {opts: {output}}) {
-          console.log('output',output);
+        enter(_, { opts: { output } }) {
           if (output) {
             pluginOptions.dir = output;
-            pluginOptions.destination = path.resolve(output, 'deps.json');
+            pluginOptions.destination = path.resolve(output, "deps.json");
           }
           prepareFile();
-        }
+        },
       },
       ImportDeclaration: {
         exit(path, { opts: { deps } }) {
@@ -90,21 +91,22 @@ module.exports = function singletonSearch({types}) {
             } else {
               console.error("error1");
             }
-
           } catch (error) {
             console.error("error2", error);
           }
-
         },
       },
     },
     post() {
-     try {
-      const data = Object.fromEntries(resultMap);
-      fs.writeFileSync(pluginOptions.destination, JSON.stringify(data, null, 4));
-     } catch (error) {
-      console.error('post error', error);
-     }
-    }
+      try {
+        const data = Object.fromEntries(resultMap);
+        fs.writeFileSync(
+          pluginOptions.destination,
+          JSON.stringify(data, null, 4)
+        );
+      } catch (error) {
+        console.error("post error", error);
+      }
+    },
   };
 };
