@@ -5,6 +5,7 @@ const process = require("process");
 const fs = require("fs");
 const del = require("del");
 const fse = require("fs-extra");
+const prettier = require("prettier");
 
 pluginTester.default({
   plugin: singletonSearchPlugin,
@@ -16,6 +17,7 @@ pluginTester.default({
   filename: __filename,
 
   snapshot: false,
+  formatResult: code => prettier.format(code, { parser: 'babel' }),
 
   tests: [
     {

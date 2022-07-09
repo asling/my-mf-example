@@ -1,0 +1,22 @@
+{
+    "antd-Card": {
+        "type": "Specifier",
+        "dep": "antd",
+        "importedName": "Card",
+        "version": "4.21.3"
+    },
+    "antd-Modal": {
+        "type": "Specifier",
+        "dep": "antd",
+        "importedName": "Modal",
+        "version": "4.21.3"
+    },
+    "antd/es/card": {
+        "type": "DefaultOrNamespaceSpecifier",
+        "version": "4.21.3"
+    },
+    "antd/es/modal": {
+        "type": "DefaultOrNamespaceSpecifier",
+        "version": "4.21.3"
+    }
+}

@@ -1,52 +1,250 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1656337012032" clover="3.2.0">
-  <project timestamp="1656337012032" name="All files">
-    <metrics statements="43" coveredstatements="43" conditionals="22" coveredconditionals="18" methods="9" coveredmethods="9" elements="74" coveredelements="70" complexity="0" loc="43" ncloc="43" packages="1" files="1" classes="1"/>
-    <file name="babel-plugin-singleton-search.js" path="/Users/chenyuwen/learnings/labs/my-mf-example/scripts/babel-plugins/babel-plugin-singleton-search.js">
+<coverage generated="1657360189606" clover="3.2.0">
+  <project timestamp="1657360189606" name="All files">
+    <metrics statements="229" coveredstatements="200" conditionals="138" coveredconditionals="88" methods="51" coveredmethods="47" elements="418" coveredelements="335" complexity="0" loc="229" ncloc="229" packages="2" files="3" classes="3"/>
+    <package name="babel-plugins">
       <metrics statements="43" coveredstatements="43" conditionals="22" coveredconditionals="18" methods="9" coveredmethods="9"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="13" count="8" type="stmt"/>
-      <line num="16" count="8" type="stmt"/>
-      <line num="22" count="6" type="stmt"/>
-      <line num="23" count="6" type="stmt"/>
-      <line num="24" count="6" type="stmt"/>
-      <line num="25" count="6" type="cond" truecount="1" falsecount="1"/>
-      <line num="26" count="6" type="stmt"/>
-      <line num="27" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="29" count="4" type="stmt"/>
-      <line num="30" count="4" type="cond" truecount="1" falsecount="1"/>
-      <line num="31" count="4" type="stmt"/>
-      <line num="38" count="2" type="cond" truecount="1" falsecount="1"/>
-      <line num="43" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="44" count="1" type="stmt"/>
-      <line num="55" count="4" type="stmt"/>
-      <line num="59" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="60" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="61" count="4" type="stmt"/>
-      <line num="62" count="4" type="cond" truecount="1" falsecount="1"/>
-      <line num="63" count="4" type="stmt"/>
-      <line num="68" count="8" type="stmt"/>
-      <line num="73" count="8" type="stmt"/>
-      <line num="74" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="75" count="7" type="stmt"/>
-      <line num="76" count="7" type="stmt"/>
-      <line num="78" count="8" type="stmt"/>
-      <line num="81" count="1" type="stmt"/>
-      <line num="87" count="7" type="cond" truecount="2" falsecount="0"/>
-      <line num="88" count="6" type="stmt"/>
-      <line num="89" count="6" type="stmt"/>
-      <line num="93" count="1" type="stmt"/>
-      <line num="99" count="6" type="stmt"/>
-      <line num="100" count="6" type="stmt"/>
-      <line num="101" count="6" type="stmt"/>
-      <line num="107" count="1" type="stmt"/>
-    </file>
+      <file name="babel-plugin-singleton-search.js" path="/Users/chenyuwen/learnings/labs/my-mf-example/scripts/babel-plugins/babel-plugin-singleton-search.js">
+        <metrics statements="43" coveredstatements="43" conditionals="22" coveredconditionals="18" methods="9" coveredmethods="9"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="24" count="6" type="stmt"/>
+        <line num="25" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="27" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="30" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="38" count="2" type="cond" truecount="3" falsecount="1"/>
+        <line num="40" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="52" count="4" type="stmt"/>
+        <line num="56" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="57" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="58" count="4" type="stmt"/>
+        <line num="59" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="60" count="4" type="stmt"/>
+        <line num="65" count="8" type="stmt"/>
+        <line num="70" count="8" type="stmt"/>
+        <line num="71" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="72" count="7" type="stmt"/>
+        <line num="73" count="7" type="stmt"/>
+        <line num="75" count="8" type="stmt"/>
+        <line num="78" count="1" type="stmt"/>
+        <line num="84" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="85" count="6" type="stmt"/>
+        <line num="86" count="6" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="96" count="6" type="stmt"/>
+        <line num="97" count="6" type="stmt"/>
+        <line num="98" count="6" type="stmt"/>
+        <line num="101" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="babel-plugins.babel-plugin-import">
+      <metrics statements="186" coveredstatements="157" conditionals="116" coveredconditionals="70" methods="42" coveredmethods="38"/>
+      <file name="Plugin.js" path="/Users/chenyuwen/learnings/labs/my-mf-example/scripts/babel-plugins/babel-plugin-import/Plugin.js">
+        <metrics statements="169" coveredstatements="140" conditionals="113" coveredconditionals="69" methods="37" coveredmethods="33"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="14" count="15" type="stmt"/>
+        <line num="19" count="26" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="26" type="stmt"/>
+        <line num="30" count="71" type="cond" truecount="3" falsecount="2"/>
+        <line num="31" count="71" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="50" count="13" type="stmt"/>
+        <line num="51" count="13" type="stmt"/>
+        <line num="53" count="13" type="stmt"/>
+        <line num="57" count="13" type="stmt"/>
+        <line num="58" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="59" count="13" type="stmt"/>
+        <line num="60" count="13" type="stmt"/>
+        <line num="61" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="62" count="13" type="stmt"/>
+        <line num="63" count="13" type="stmt"/>
+        <line num="67" count="13" type="stmt"/>
+        <line num="68" count="13" type="stmt"/>
+        <line num="69" count="13" type="stmt"/>
+        <line num="73" count="125" type="cond" truecount="2" falsecount="0"/>
+        <line num="74" count="13" type="stmt"/>
+        <line num="76" count="125" type="stmt"/>
+        <line num="80" count="23" type="cond" truecount="2" falsecount="0"/>
+        <line num="81" count="14" type="stmt"/>
+        <line num="82" count="14" type="cond" truecount="1" falsecount="1"/>
+        <line num="88" count="14" type="stmt"/>
+        <line num="89" count="14" type="stmt"/>
+        <line num="91" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="92" count="3" type="stmt"/>
+        <line num="93" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="94" count="2" type="stmt"/>
+        <line num="96" count="3" type="stmt"/>
+        <line num="98" count="11" type="stmt"/>
+        <line num="108" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="110" count="12" type="stmt"/>
+        <line num="115" count="2" type="stmt"/>
+        <line num="123" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="124" count="1" type="stmt"/>
+        <line num="127" count="1" type="stmt"/>
+        <line num="128" count="13" type="cond" truecount="1" falsecount="1"/>
+        <line num="129" count="0" type="stmt"/>
+        <line num="137" count="0" type="stmt"/>
+        <line num="138" count="13" type="cond" truecount="1" falsecount="1"/>
+        <line num="139" count="0" type="stmt"/>
+        <line num="140" count="13" type="cond" truecount="1" falsecount="1"/>
+        <line num="141" count="0" type="stmt"/>
+        <line num="142" count="13" type="cond" truecount="1" falsecount="1"/>
+        <line num="143" count="0" type="stmt"/>
+        <line num="144" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="145" count="0" type="stmt"/>
+        <line num="150" count="23" type="stmt"/>
+        <line num="154" count="25" type="stmt"/>
+        <line num="155" count="25" type="stmt"/>
+        <line num="156" count="25" type="stmt"/>
+        <line num="157" count="25" type="stmt"/>
+        <line num="158" count="25" type="stmt"/>
+        <line num="159" count="39" type="cond" truecount="2" falsecount="0"/>
+        <line num="160" count="23" type="cond" truecount="2" falsecount="0"/>
+        <line num="164" count="16" type="stmt"/>
+        <line num="169" count="16" type="cond" truecount="1" falsecount="1"/>
+        <line num="170" count="16" type="stmt"/>
+        <line num="171" count="16" type="stmt"/>
+        <line num="175" count="25" type="stmt"/>
+        <line num="179" count="11" type="stmt"/>
+        <line num="180" count="11" type="stmt"/>
+        <line num="181" count="11" type="stmt"/>
+        <line num="183" count="11" type="stmt"/>
+        <line num="184" count="0" type="cond" truecount="0" falsecount="3"/>
+        <line num="188" count="11" type="cond" truecount="2" falsecount="2"/>
+        <line num="189" count="0" type="stmt"/>
+        <line num="194" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="195" count="0" type="stmt"/>
+        <line num="197" count="11" type="cond" truecount="1" falsecount="1"/>
+        <line num="198" count="0" type="stmt"/>
+        <line num="199" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="200" count="0" type="stmt"/>
+        <line num="205" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="206" count="0" type="stmt"/>
+        <line num="214" count="13" type="stmt"/>
+        <line num="215" count="13" type="stmt"/>
+        <line num="216" count="13" type="stmt"/>
+        <line num="217" count="13" type="stmt"/>
+        <line num="218" count="13" type="stmt"/>
+        <line num="222" count="13" type="stmt"/>
+        <line num="223" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="228" count="29" type="stmt"/>
+        <line num="231" count="29" type="cond" truecount="1" falsecount="1"/>
+        <line num="233" count="29" type="stmt"/>
+        <line num="234" count="29" type="stmt"/>
+        <line num="235" count="29" type="stmt"/>
+        <line num="236" count="29" type="stmt"/>
+        <line num="241" count="29" type="cond" truecount="2" falsecount="0"/>
+        <line num="242" count="13" type="stmt"/>
+        <line num="243" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="244" count="12" type="stmt"/>
+        <line num="246" count="2" type="stmt"/>
+        <line num="250" count="13" type="stmt"/>
+        <line num="255" count="18" type="stmt"/>
+        <line num="256" count="18" type="stmt"/>
+        <line num="257" count="18" type="stmt"/>
+        <line num="258" count="18" type="stmt"/>
+        <line num="259" count="18" type="stmt"/>
+        <line num="261" count="18" type="cond" truecount="2" falsecount="0"/>
+        <line num="262" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="263" count="0" type="stmt"/>
+        <line num="268" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="269" count="0" type="stmt"/>
+        <line num="274" count="18" type="stmt"/>
+        <line num="275" count="24" type="stmt"/>
+        <line num="276" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="281" count="5" type="stmt"/>
+        <line num="286" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="288" count="19" type="stmt"/>
+        <line num="293" count="16" type="stmt"/>
+        <line num="294" count="16" type="stmt"/>
+        <line num="295" count="16" type="stmt"/>
+        <line num="298" count="16" type="cond" truecount="4" falsecount="0"/>
+        <line num="300" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="302" count="2" type="stmt"/>
+        <line num="303" count="13" type="cond" truecount="1" falsecount="1"/>
+        <line num="307" count="0" type="stmt"/>
+        <line num="309" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="310" count="0" type="stmt"/>
+        <line num="315" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="316" count="0" type="stmt"/>
+        <line num="323" count="5" type="stmt"/>
+        <line num="324" count="5" type="stmt"/>
+        <line num="328" count="6" type="stmt"/>
+        <line num="329" count="6" type="stmt"/>
+        <line num="333" count="4" type="stmt"/>
+        <line num="334" count="5" type="stmt"/>
+        <line num="335" count="4" type="stmt"/>
+        <line num="339" count="2" type="stmt"/>
+        <line num="340" count="2" type="stmt"/>
+        <line num="344" count="3" type="stmt"/>
+        <line num="345" count="3" type="stmt"/>
+        <line num="354" count="3" type="stmt"/>
+        <line num="355" count="3" type="stmt"/>
+        <line num="356" count="3" type="stmt"/>
+        <line num="360" count="12" type="stmt"/>
+        <line num="361" count="12" type="stmt"/>
+        <line num="362" count="12" type="cond" truecount="1" falsecount="1"/>
+        <line num="363" count="0" type="stmt"/>
+        <line num="368" count="1" type="stmt"/>
+        <line num="369" count="1" type="stmt"/>
+        <line num="373" count="1" type="stmt"/>
+        <line num="374" count="1" type="stmt"/>
+        <line num="380" count="1" type="stmt"/>
+        <line num="384" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="385" count="1" type="stmt"/>
+        <line num="386" count="1" type="stmt"/>
+        <line num="391" count="2" type="stmt"/>
+        <line num="392" count="2" type="stmt"/>
+        <line num="396" count="1" type="stmt"/>
+        <line num="397" count="1" type="stmt"/>
+        <line num="399" count="1" type="stmt"/>
+        <line num="400" count="1" type="stmt"/>
+        <line num="404" count="1" type="stmt"/>
+        <line num="405" count="1" type="stmt"/>
+        <line num="409" count="2" type="stmt"/>
+        <line num="410" count="2" type="stmt"/>
+        <line num="414" count="1" type="stmt"/>
+        <line num="415" count="1" type="stmt"/>
+      </file>
+      <file name="index.js" path="/Users/chenyuwen/learnings/labs/my-mf-example/scripts/babel-plugins/babel-plugin-import/index.js">
+        <metrics statements="17" coveredstatements="17" conditionals="3" coveredconditionals="1" methods="5" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="13" type="stmt"/>
+        <line num="8" count="133" type="cond" truecount="1" falsecount="1"/>
+        <line num="9" count="133" type="stmt"/>
+        <line num="13" count="13" type="stmt"/>
+        <line num="16" count="13" type="stmt"/>
+        <line num="17" count="13" type="stmt"/>
+        <line num="31" count="13" type="stmt"/>
+        <line num="34" count="13" type="stmt"/>
+        <line num="38" count="13" type="stmt"/>
+        <line num="58" count="13" type="stmt"/>
+        <line num="62" count="13" type="stmt"/>
+        <line num="63" count="221" type="stmt"/>
+        <line num="64" count="107" type="stmt"/>
+        <line num="68" count="13" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>

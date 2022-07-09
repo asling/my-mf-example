@@ -168,13 +168,7 @@
 <a name='L103'></a><a href='#L103'>103</a>
 <a name='L104'></a><a href='#L104'>104</a>
 <a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a>
-<a name='L111'></a><a href='#L111'>111</a>
-<a name='L112'></a><a href='#L112'>112</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L106'></a><a href='#L106'>106</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -212,9 +206,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -277,24 +268,21 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const fs = require("fs");
-const path = require("path");
-const process = require("process");
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const fs = require('fs');
+const path = require('path');
+const process = require('process');
 &nbsp;
-const Specifier = "Specifier";
-const DefaultOrNamespaceSpecifier = "DefaultOrNamespaceSpecifier";
+const Specifier = 'Specifier';
+const DefaultOrNamespaceSpecifier = 'DefaultOrNamespaceSpecifier';
 &nbsp;
-const DIR = path.resolve(process.cwd(), ".dep-temp");
+const DIR = path.resolve(process.cwd(), '.dep-temp');
 &nbsp;
-const DESTINATION = path.resolve(DIR, "deps.json");
+const DESTINATION = path.resolve(DIR, 'deps.json');
 &nbsp;
 module.exports = function singletonSearch({ types }) {
   let resultMap = new Map();
@@ -322,10 +310,7 @@ module.exports = function singletonSearch({ types }) {
               version: dep.version,
             });
           }
-        } else <span class="missing-if-branch" title="else path not taken" >E</span>if (
-          types.isImportDefaultSpecifier(spec) ||
-          types.isImportNamespaceSpecifier(spec)
-        ) {
+        } else <span class="missing-if-branch" title="else path not taken" >E</span>if (types.isImportDefaultSpecifier(spec) || types.isImportNamespaceSpecifier(spec)) {
           // e.g import antd from 'antd' OR import * as antd from 'antd'
           if (!resultMap.has(value)) {
             resultMap.set(value, {
@@ -353,19 +338,19 @@ module.exports = function singletonSearch({ types }) {
   }
 &nbsp;
   return {
-    name: "singleton search",
+    name: 'singleton search',
     visitor: {
       Program: {
         enter(_, { opts: { output } }) {
           try {
             if (output) {
               pluginOptions.dir = output;
-              pluginOptions.destination = path.resolve(output, "deps.json");
+              pluginOptions.destination = path.resolve(output, 'deps.json');
             }
             prepareFile();
           } catch (error) {
             // console.log("prepare error", error);
-            throw new Error("prepare error");
+            throw new Error('prepare error');
           }
         },
       },
@@ -377,7 +362,7 @@ module.exports = function singletonSearch({ types }) {
             });
           } else {
             // console.log("options error", "入参错误");
-            throw new Error("options error");
+            throw new Error('options error');
           }
         },
       },
@@ -385,15 +370,12 @@ module.exports = function singletonSearch({ types }) {
     post() {
       try {
         const data = Object.fromEntries(resultMap);
-        fs.writeFileSync(
-          pluginOptions.destination,
-          JSON.stringify(data, null, 4)
-        );
+        fs.writeFileSync(pluginOptions.destination, JSON.stringify(data, null, 4));
       } catch (error) {
         // console.log("post error", error);
-        throw new Error("post error");
+        throw new Error('post error');
       }
-    }
+    },
   };
 };
 &nbsp;</pre></td></tr></table></pre>
@@ -403,7 +385,7 @@ module.exports = function singletonSearch({ types }) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Jun 27 2022 21:36:52 GMT+0800 (中国标准时间)
+                at Sat Jul 09 2022 17:39:07 GMT+0800 (中国标准时间)
             </div>
         <script src="prettify.js"></script>
         <script>

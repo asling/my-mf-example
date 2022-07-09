@@ -1,13 +1,13 @@
-const fs = require("fs");
-const path = require("path");
-const process = require("process");
+const fs = require('fs');
+const path = require('path');
+const process = require('process');
 
-const Specifier = "Specifier";
-const DefaultOrNamespaceSpecifier = "DefaultOrNamespaceSpecifier";
+const Specifier = 'Specifier';
+const DefaultOrNamespaceSpecifier = 'DefaultOrNamespaceSpecifier';
 
-const DIR = path.resolve(process.cwd(), ".dep-temp");
+const DIR = path.resolve(process.cwd(), '.dep-temp');
 
-const DESTINATION = path.resolve(DIR, "deps.json");
+const DESTINATION = path.resolve(DIR, 'deps.json');
 
 module.exports = function singletonSearch({ types }) {
   let resultMap = new Map();
@@ -35,10 +35,7 @@ module.exports = function singletonSearch({ types }) {
               version: dep.version,
             });
           }
-        } else if (
-          types.isImportDefaultSpecifier(spec) ||
-          types.isImportNamespaceSpecifier(spec)
-        ) {
+        } else if (types.isImportDefaultSpecifier(spec) || types.isImportNamespaceSpecifier(spec)) {
           // e.g import antd from 'antd' OR import * as antd from 'antd'
           if (!resultMap.has(value)) {
             resultMap.set(value, {
@@ -66,19 +63,19 @@ module.exports = function singletonSearch({ types }) {
   }
 
   return {
-    name: "singleton search",
+    name: 'singleton search',
     visitor: {
       Program: {
         enter(_, { opts: { output } }) {
           try {
             if (output) {
               pluginOptions.dir = output;
-              pluginOptions.destination = path.resolve(output, "deps.json");
+              pluginOptions.destination = path.resolve(output, 'deps.json');
             }
             prepareFile();
           } catch (error) {
             // console.log("prepare error", error);
-            throw new Error("prepare error");
+            throw new Error('prepare error');
           }
         },
       },
@@ -90,7 +87,7 @@ module.exports = function singletonSearch({ types }) {
             });
           } else {
             // console.log("options error", "入参错误");
-            throw new Error("options error");
+            throw new Error('options error');
           }
         },
       },
@@ -98,14 +95,11 @@ module.exports = function singletonSearch({ types }) {
     post() {
       try {
         const data = Object.fromEntries(resultMap);
-        fs.writeFileSync(
-          pluginOptions.destination,
-          JSON.stringify(data, null, 4)
-        );
+        fs.writeFileSync(pluginOptions.destination, JSON.stringify(data, null, 4));
       } catch (error) {
         // console.log("post error", error);
-        throw new Error("post error");
+        throw new Error('post error');
       }
-    }
+    },
   };
 };
